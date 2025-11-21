@@ -96,9 +96,9 @@ export default function Home() {
       {/* Spiel-Button Section */}
       <section className="bg-secondary/10 border-t border-border py-12">
         <div className="flex flex-col items-center gap-4">
-          <span className="text-lg font-medium text-foreground">Hätten Sie es gewusst?</span>
+          <span className="text-lg font-medium text-foreground">Testen Sie ihr Wissen?</span>
           <a
-            href="https://bundeslaender-game.onrender.com"
+            href="https://bundeslaender-game-16ak.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="relative flex items-center justify-around px-6 py-4 bg-yellow-400 border-4 border-black rounded-[15px] shadow-[4px_6px_0px_black] overflow-hidden font-semibold text-black cursor-pointer transition-all duration-250 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_3px_0px_black] active:filter active:saturate-75"
