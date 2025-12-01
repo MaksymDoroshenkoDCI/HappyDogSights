@@ -20,6 +20,7 @@ Eine moderne Next.js-Anwendung, die hundefreundliche Aussichtspunkte in allen 16
 - **Karten**: Leaflet mit React-Leaflet
 - **Icons**: Lucide React
 - **Build-Tool**: pnpm
+- **Datenbank: Supabase
 
 ## 🛠️ Installation & Setup
 
