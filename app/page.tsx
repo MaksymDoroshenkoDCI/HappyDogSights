@@ -53,7 +53,7 @@ export default function Home() {
           <img
             src="/HDS.jpg"
             alt="Hero Bild"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full "
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
@@ -62,7 +62,7 @@ export default function Home() {
                 Entdecke Deutschlands schönste Aussichtspunkte mit deinem Hund
               </h2>
               <p className="text-base sm:text-lg text-gray-100 mb-6 drop-shadow">
-                Über 320 Aussichtspunkte in 16 Bundesländern mit Informationen zu
+                Über 320 Aussichtspunkte in 16 Bundesländern mit <br/>Informationen zu
                 Hundepensionen in der Nähe.
               </p>
 
