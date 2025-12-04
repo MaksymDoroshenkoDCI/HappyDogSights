@@ -49,72 +49,38 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] overflow-hidden">
-          <img
-            src="/HDS.jpg"
-            alt="Hero Bild"
-            className="absolute inset-0 w-full h-full "
+        {/* Hero Section */}
+<section className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] overflow-hidden">
+  <img
+    src="/HDS.jpg"
+    alt="Hero Bild"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black/40" />
+  <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
+    <div className="max-w-xl">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-md">
+        Entdecke Deutschlands schönste Aussichtspunkte mit deinem Hund
+      </h2>
+      <p className="text-base sm:text-lg text-gray-100 mb-6 drop-shadow">
+        Über 320 Aussichtspunkte in 16 Bundesländern mit Informationen zu Hundepensionen in der Nähe!
+      </p>
+
+      {/* Search Bar im Hero */}
+      <div className="max-w-md">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
+          <Input
+            placeholder="Nach Bundesland oder Aussichtspunkt suchen..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10 h-12 bg-white/95 backdrop-blur text-foreground"
           />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-            <div className="max-w-xl">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-md">
-                Entdecke Deutschlands schönste Aussichtspunkte mit deinem Hund
-              </h2>
-              <p className="text-base sm:text-lg text-gray-100 mb-6 drop-shadow">
-                Über 320 Aussichtspunkte in 16 Bundesländern mit <br/>Informationen zu
-                Hundepensionen in der Nähe.
-              </p>
-
-<<<<<<< HEAD
-      {/* Hero Section mit HDS.jpg */}
-      <section className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] overflow-hidden">
-        <img
-          src="/HDS.jpg"
-          alt="Hero Bild"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Dunkles Overlay für bessere Lesbarkeit */}
-        <div className="absolute inset-0 bg-black/40" />
-
-        <div className="relative z-10 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-md">
-              Entdecke Deutschlands schönste Aussichtspunkte mit deinem Hund
-            </h2>
-            
-            <p className="text-base sm:text-lg text-gray-100 mb-6 drop-shadow">
-              Über 320 Aussichtspunkte in 16 Bundesländern mit Informationen zu
-              Hundepensionen in der Nähe!
-            </p>
-
-            {/* Search Bar im Hero */}
-            <div className="max-w-md">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-                <Input
-                  placeholder="Nach Bundesland oder Aussichtspunkt suchen..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 bg-white/95 backdrop-blur text-foreground"
-                />
-=======
-              {/* Search Bar im Hero */}
-              <div className="max-w-md">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
-                  <Input
-                    placeholder="Nach Bundesland oder Aussichtspunkt suchen..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 h-12 bg-white/95 backdrop-blur text-foreground"
-                  />
-                </div>
->>>>>>> 79646c23b5b960ea8df25f40fb5d6d78abb53ccf
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* States Grid */}
         <section className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
