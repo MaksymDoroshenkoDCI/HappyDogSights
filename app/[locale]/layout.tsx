@@ -37,9 +37,5 @@ export default function LocaleLayout({
 }) {
   const { locale } = use(params);
 
-  return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className="font-sans antialiased">{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }
