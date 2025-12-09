@@ -60,7 +60,9 @@ export default function ViewpointPage({
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Aussichtspunkt nicht gefunden</h1>
+          <h1 className="text-2xl font-bold mb-4">
+            Aussichtspunkt nicht gefunden
+          </h1>
           <Link href={`/${locale}`}>
             <Button>Zur Startseite</Button>
           </Link>
@@ -84,7 +86,9 @@ export default function ViewpointPage({
 
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-primary">{viewpoint.name}</h1>
+              <h1 className="text-3xl font-bold text-primary">
+                {viewpoint.name}
+              </h1>
               <p className="text-muted-foreground flex items-center gap-1 mt-1">
                 <MapPin className="w-4 h-4" />
                 {viewpoint.city}
@@ -97,7 +101,9 @@ export default function ViewpointPage({
               onClick={() => setIsFavorite(!isFavorite)}
               className={isFavorite ? "text-accent" : ""}
             >
-              <Heart className={`w-5 h-5 ${isFavorite ? "fill-current" : ""}`} />
+              <Heart
+                className={`w-5 h-5 ${isFavorite ? "fill-current" : ""}`}
+              />
             </Button>
           </div>
         </div>
@@ -113,7 +119,9 @@ export default function ViewpointPage({
               <CardHeader className="pb-2">
                 <CardTitle>Über diesen Aussichtspunkt</CardTitle>
                 <CardDescription>
-                  <p className="mt-1 mb-4 text-foreground/80 leading-relaxed">{viewpoint.description}</p>
+                  <p className="mt-1 mb-4 text-foreground/80 leading-relaxed">
+                    {viewpoint.description}
+                  </p>
                 </CardDescription>
               </CardHeader>
 
@@ -126,15 +134,29 @@ export default function ViewpointPage({
                   onClick={() => setShowInfo(!showInfo)}
                 >
                   <span>Information zum Aussichtspunkt</span>
-                  <span className="text-muted-foreground">{showInfo ? "▲" : "▼"}</span>
+                  <span className="text-muted-foreground">
+                    {showInfo ? "▲" : "▼"}
+                  </span>
                 </Button>
 
                 {showInfo && (
                   <div className="mt-2 pl-8 pt-3 pb-3 border rounded-lg bg-muted/50 flex flex-col gap-3">
-                    <p className="text-sm text-muted-foreground m-0">Länge: {viewpoint.lat}</p>
-                    <p className="text-sm text-muted-foreground m-0">Breite: {viewpoint.lng}</p>
-                    <Button variant="link" className="flex items-center font-semibold p-0" asChild>
-                      <a href={viewpoint.href} target="_blank" rel="noopener noreferrer">
+                    <p className="text-sm text-muted-foreground m-0">
+                      Länge: {viewpoint.lat}
+                    </p>
+                    <p className="text-sm text-muted-foreground m-0">
+                      Breite: {viewpoint.lng}
+                    </p>
+                    <Button
+                      variant="link"
+                      className="flex items-center font-semibold p-0"
+                      asChild
+                    >
+                      <a
+                        href={viewpoint.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="w-4 h-4 mr-1" />
                         Webseite zum Aussichtspunkt
                       </a>
@@ -152,9 +174,14 @@ export default function ViewpointPage({
                   <span>
                     Bewertungen & Rezension
                     {reviews.length > 0 &&
-                      ` – ⭐ ${(reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)}`}
+                      ` – ⭐ ${(
+                        reviews.reduce((sum, r) => sum + r.rating, 0) /
+                        reviews.length
+                      ).toFixed(1)}`}
                   </span>
-                  <span className="text-muted-foreground">{showReviewsCard ? "▲" : "▼"}</span>
+                  <span className="text-muted-foreground">
+                    {showReviewsCard ? "▲" : "▼"}
+                  </span>
                 </Button>
 
                 {showReviewsCard && (
@@ -171,7 +198,9 @@ export default function ViewpointPage({
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle>Hundepensionen in der Nähe</CardTitle>
-                <CardDescription className="mt-1 mb-4">{pensions.length} Pensionen gefunden</CardDescription>
+                <CardDescription className="mt-1 mb-4">
+                  {pensions.length} Pensionen gefunden
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 {pensions.length > 0 ? (
@@ -181,12 +210,16 @@ export default function ViewpointPage({
                         variant="outline"
                         size="sm"
                         className="w-full flex justify-between items-center mb-2"
-                        onClick={() => setExpandedPension(
-                          expandedPension === pension.id ? null : pension.id
-                        )}
+                        onClick={() =>
+                          setExpandedPension(
+                            expandedPension === pension.id ? null : pension.id
+                          )
+                        }
                       >
                         <span>{pension.name}</span>
-                        <span>{expandedPension === pension.id ? "▲" : "▼"}</span>
+                        <span>
+                          {expandedPension === pension.id ? "▲" : "▼"}
+                        </span>
                       </Button>
 
                       {expandedPension === pension.id && (
@@ -194,14 +227,21 @@ export default function ViewpointPage({
                           <p className="text-sm text-muted-foreground flex items-center gap-1">
                             {pension.distance} km entfernt
                           </p>
-                          <p className="text-sm text-foreground/70">{pension.description}</p>
+                          <p className="text-sm text-foreground/70">
+                            {pension.description}
+                          </p>
                           <div className="flex gap-2">
                             <Button variant="link" size="sm" asChild>
                               <a href={`tel:${pension.phone}`}>📞 Anrufen</a>
                             </Button>
                             <Button variant="link" size="sm" asChild>
-                              <a href={pension.website} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="w-4 h-4 mr-1" /> Website
+                              <a
+                                href={pension.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="w-4 h-4 mr-1" />{" "}
+                                Website
                               </a>
                             </Button>
                           </div>
@@ -210,7 +250,9 @@ export default function ViewpointPage({
                     </div>
                   ))
                 ) : (
-                  <p className="text-muted-foreground">Keine Hundepensionen gefunden</p>
+                  <p className="text-muted-foreground">
+                    Keine Hundepensionen gefunden
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -228,7 +270,15 @@ export default function ViewpointPage({
                     latitude={viewpoint.lat}
                     longitude={viewpoint.lng}
                     zoom={13}
-                    markers={[{ lat: viewpoint.lat, lng: viewpoint.lng, title: viewpoint.name, type: "viewpoint", id: viewpoint.id }]}
+                    markers={[
+                      {
+                        lat: viewpoint.lat,
+                        lng: viewpoint.lng,
+                        title: viewpoint.name,
+                        type: "viewpoint",
+                        id: viewpoint.id,
+                      },
+                    ]}
                   />
                 </div>
               </CardContent>

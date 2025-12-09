@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, ChevronLeft, Star } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 export default function StatePage({
   params,
@@ -85,7 +85,10 @@ export default function StatePage({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {filteredViewpoints.map((viewpoint) => (
-            <Link key={viewpoint.id} href={`/${locale}/aussichtspunkt/${viewpoint.id}`}>
+            <Link
+              key={viewpoint.id}
+              href={`/${locale}/aussichtspunkt/${viewpoint.id}`}
+            >
               <Card className="h-full hover:shadow-xl transition-all cursor-pointer">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-2">
